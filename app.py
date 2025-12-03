@@ -1,17 +1,20 @@
 # app.py
 import os
+import sqlite3
 from flask import Flask, jsonify
 
 # This *must* be named "app"
 app = Flask(__name__)
-
+DB_PATH = os.path.join(os.getcwd(), "test.db")
 
 @app.get("/")
 def index():
     return jsonify(
-        REQUESTS_CA_BUNDLE=os.environ.get("REQUESTS_CA_BUNDLE")
-        #"REQUESTS_CA_BUNDLE": os.environ.get("REQUESTS_CA_BUNDLE"),
-        #"sqlite_db_exists": os.path.exists(DB_PATH),
+        REQUESTS_CA_BUNDLE=os.environ.get("REQUESTS_CA_BUNDLE"),
+        
+        SQLITE_DB_EXISTS=os.path.exists(DB_PATH),
+        DB_PATH=DB_PATH,
+        
     )
 
 @app.get("/write")
