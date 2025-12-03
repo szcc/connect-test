@@ -9,9 +9,9 @@ app = Flask(__name__)
 @app.get("/")
 def index():
     return jsonify(
-        #REQUESTS_CA_BUNDLE=os.environ.get("REQUESTS_CA_BUNDLE")
-        "REQUESTS_CA_BUNDLE": os.environ.get("REQUESTS_CA_BUNDLE"),
-        "sqlite_db_exists": os.path.exists(DB_PATH),
+        REQUESTS_CA_BUNDLE=os.environ.get("REQUESTS_CA_BUNDLE")
+        #"REQUESTS_CA_BUNDLE": os.environ.get("REQUESTS_CA_BUNDLE"),
+        #"sqlite_db_exists": os.path.exists(DB_PATH),
     )
 
 @app.get("/write")
