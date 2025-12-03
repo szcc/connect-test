@@ -9,6 +9,20 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 DB_PATH = os.path.join(os.getcwd(), "test.db")
 
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS demo (
+            id INTEGER PRIMARY KEY,
+            value TEXT
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+init_db()
+
 @app.get("/")
 def index():
     return jsonify(
