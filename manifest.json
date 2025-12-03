@@ -3,7 +3,7 @@
   "locale": "en_US.UTF-8",
   "metadata": {
     "appmode": "python-api",
-    "entrypoint": "app:app"
+    "entrypoint": "app"
   },
   "python": {
     "version": "3.9.7",
@@ -20,7 +20,7 @@
   },
   "files": {
     "requirements.txt": {
-      "checksum": "8c361ea44722b4b22949460673f78845"
+      "checksum": "d40679ba2cf461d0d7988a57c5549bd5"
     },
     ".gitignore": {
       "checksum": "64ade73f4586bbd5612782b751e67950"
@@ -32,7 +32,7 @@
       "checksum": "5abc06604fc7dd45414085626d2bf77d"
     },
     "app.py": {
-      "checksum": "67817befeae27ebdfd0434628ab71773"
+      "checksum": "8fcbc6f3f8910fd444c8acdc925e5d28"
     },
     "app_back.py": {
       "checksum": "2c81a102e1540098341d2f49530f3f42"
