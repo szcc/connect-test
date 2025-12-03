@@ -1,7 +1,12 @@
+# app.py
 import os
+from flask import Flask, jsonify
 
-def get():
-    # Posit Connect will map HTTP GET / to this function
-    return {
-        "REQUESTS_CA_BUNDLE": os.environ.get("REQUESTS_CA_BUNDLE"),
-    }
+app = Flask(__name__)
+
+@app.get("/")
+def index():
+    return jsonify(
+        REQUESTS_CA_BUNDLE=os.environ.get("REQUESTS_CA_BUNDLE")
+    )
+
