@@ -2,7 +2,9 @@
 import os
 from flask import Flask, jsonify
 
+# This *must* be named "app"
 app = Flask(__name__)
+
 
 @app.get("/")
 def index():
